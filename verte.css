@@ -1042,6 +1042,15 @@ position:fixed;
 z-index:2900
 }
 
+.imgpanier2 {
+    float: left;
+}
+
+span {
+    padding: 0px 5px;
+}
+
+
 .countpanier {
     float: right;
     margin-top: -3px;
@@ -1127,7 +1136,7 @@ padding:7% 0 0 6%
 
 .promobadg {
 float:left;
-width:42%;
+width:39%;
 padding:2%;
 margin:0 0 0 10px;
 border-radius:7px;
