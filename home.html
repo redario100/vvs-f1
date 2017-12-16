@@ -204,9 +204,23 @@ $('#pilo').addClass('bghyn2');
 
 }
 
+function addtocart2()
+{ 
+$('.backgrn').show();
+$('#pilo2').show();
+setTimeout(function(){ 
+$('#pilo2').addClass('bghyn2');
+ }, 200);
+
+
+
+
+}
+
 function hideall()
 {
 $('#pilo').removeClass('bghyn2');
+$('#pilo2').removeClass('bghyn2');
 setTimeout(function(){ 
 $('.backgrn').hide();
  document.getElementById("valqt").value = '1';
@@ -317,7 +331,11 @@ if (!nomresidence)
 }
 }
 
-
+function ajouterpanier2()
+{
+$('#pilo2').removeClass('bghyn2');
+$('.backgrn').hide();
+ }
 function ajouterpanier()
 {
 var a=$("#idproduct").val();
@@ -585,6 +603,28 @@ Votre Commande a été envoyé, vous allez recevoir une réponse dans quelques i
 <div style="margin-top:23px;" onclick="$('.pano1').hide();$('.pano3').hide();" class="buttonx">Ok</div>
 </div>
 <div onclick="hideall()" class="backgrn"></div>
+<div id="pilo2" style="width:80%;height:60%;" class="bghyn">
+<div class="ajouterpan">Saisissez votre demande</div>
+<span style="padding: 0% 8%;
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 1.1em;
+    color: grey;
+    margin-top: 10px;">Merci de précisez brièvement votre demande, un conseiller va vous rappeler dans le plus bref délai ! </span>
+<textarea type="text" style='    padding: 2%;
+    outline: none;
+    border-radius: 4px;
+    float: left;
+    width: 90%;
+    height: 150px;
+    border: 1px solid #e0dfdf;
+    margin: 3%;'></textarea>
+	
+		<div  onclick="ajouterpanier2()" style="margin-top:20px;margin-bottom:8px;float:left;" class="swiper-button-next activeo btsuivant33 tti2">
+			<i class="flaticon-success"></i> Envoyer ma demande <span class="glyphicon glyphicon-menu-right"></span>
+			</div>
+</div>
 <div id="pilo" class="bghyn">
 <div class="ajouterpan">Commander</div>
 <input type="hidden" value="" id="idproduct">

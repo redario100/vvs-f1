@@ -929,7 +929,7 @@ animation-timing-function:ease;
 width:300px;
 position:fixed;
 height:300px;
-box-shadow:0 8px .3em grey!important;
+box-shadow:0 3px 2em #585858 !important;
 border-radius:7px;
 z-index:3000;
 bottom:0;
@@ -942,7 +942,7 @@ margin:40% auto auto!important
 }
 
 .ajouterpan {
-font-size:17px;
+font-size:1.3em;
 padding:4% 3%;
 float:left;
 text-align:center;
@@ -1025,7 +1025,7 @@ width:92%;
 border-bottom-left-radius:6px;
 border-bottom-right-radius:6px;
 background:#a8e000;
-font-size:18px;
+font-size:1.3em;
 padding:5% 4%
 }
 
