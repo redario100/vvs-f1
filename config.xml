@@ -22,7 +22,7 @@
         permission on your app, which PhoneGap requires.
     -->
 	
-	<content src="home.html" />
+	<content src="index.html" />
 		<feature name="InAppBrowser">
     <param name="android-package" value="org.apache.cordova.InAppBrowser" />
 </feature>
