@@ -942,7 +942,7 @@ margin:40% auto auto!important
 }
 
 .ajouterpan {
-font-size:1.3em;
+font-size:1.2em;
 padding:4% 3%;
 float:left;
 text-align:center;
@@ -1012,6 +1012,20 @@ width:79px;
 border:1px solid #d3d3d3
 }
 
+.ajouterpan2 {
+    font-size: 1.1em;
+    padding: 4% 3%;
+    float: left;
+	text-shadow:none !important;
+    text-align: center;
+    width: 94%;
+    color: #fff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 7px;
+    background: #4e5048;
+    border-bottom: 2px solid #4c4c4c!important;
+}
+
 .btsuivant33 {
 margin-top:20px;
 margin-bottom:8px;
@@ -1025,7 +1039,7 @@ width:92%;
 border-bottom-left-radius:6px;
 border-bottom-right-radius:6px;
 background:#a8e000;
-font-size:1.3em;
+font-size:1.2em;
 padding:5% 4%
 }
 
