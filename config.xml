@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.villeverteservice7.com"
-        version   = "2.0.0">
+        version   = "3.0.0">
 
     <name>Ville verte service</name>
 
@@ -22,7 +22,7 @@
         permission on your app, which PhoneGap requires.
     -->
 	
-	<content src="index.html" />
+	<content src="home.html" />
 		<feature name="InAppBrowser">
     <param name="android-package" value="org.apache.cordova.InAppBrowser" />
 </feature>
@@ -144,7 +144,7 @@
 	
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-    <string>200</string>
+    <string>300</string>
     </gap:config-file>
 
 	
