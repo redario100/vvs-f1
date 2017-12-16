@@ -81,6 +81,8 @@ font-size:.8em
 text-align:center;
 margin:7px;
 background:#fff;
+height:128px;
+    line-height: 16px;
 border-radius:7px;
 padding:9px 0;
 box-shadow:0 1px .3em #e0e0e0!important
@@ -1041,13 +1043,13 @@ z-index:2900
 }
 
 .countpanier {
-float:right;
-margin-top:-7px;
-background:#fff;
-padding:3px 6px;
-font-weight:700;
-border-radius:40px;
-color:#e12626
+    float: right;
+    margin-top: -3px;
+    background: #fff;
+    padding: 2px 7px;
+    font-weight: 700;
+    border-radius: 40px;
+    color: #e12626;
 }
 
 .tg {
