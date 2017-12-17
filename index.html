@@ -34,13 +34,12 @@ $(".reda1").addClass("bgbg");
 $(".reda2").removeClass("bgbg");
 $( "#choixbien" ).val(k);
 var offsets = $('.reda1').offset();
-var top = offsets.top;
+var top = offsets.top; 
+$("#numero1").fadeIn();
+$("#numero2").fadeIn();
 setTimeout(function() {
 jQuery('#page3').animate({scrollTop: top+1000}, 10);
 }, 200); 
-$("#numero1").fadeIn();
-$("#numero2").fadeIn();
-
 
 }
 else
@@ -50,9 +49,6 @@ $(".reda2").addClass("bgbg");
 $( "#choixbien" ).val(k);
 var offsets = $('.reda1').offset();
 var top = offsets.top;
-setTimeout(function() {
-jQuery('#page3').animate({scrollTop: top+1000}, 10);
-}, 200); 
 $("#numero1").hide();
 $("#numero2").fadeIn();
 }
@@ -64,7 +60,6 @@ function biza(k)
 {
 var offsets = $('#'+k).offset();
 var top = offsets.top;
-jQuery('#page3').animate({scrollTop: top-50}, 10);
 }
 
 
@@ -72,9 +67,7 @@ function biza2(k)
 {
 var offsets = $('#'+k).offset();
 var top = offsets.top;
-setTimeout(function() {
-jQuery('#page3').animate({scrollTop: top+400}, 10);
-}, 200);    
+ 
 }
 
 
@@ -361,7 +354,15 @@ Aujourd'hui, profiter encore plus de votre ville verte et passez plus de temps a
 			<span style="font-size: 23px;font-family: 'Kaushan Script', cursive, cursive;line-height:16px;color:white;">Inscrivez-Vous</span>
 			</div>
 				<br/>
-			<div role="main" style="text-align:left;'Exo 2', sans-serif !important" class="ui-content">
+			<div role="main" style="
+    border-width: 0 !important;
+    overflow: visible !important;
+    height: 71% !important;
+    position: absolute !important;
+    overflow-y: scroll !important;
+    padding: 1em !important;
+	text-align: left !important;
+    width: 90%; !important" class="ui-content">
 	<div class="jelly-form" style="width:100%;margin-top:5px !important;">
 	<label>Nom & Prénom</label><br/>
 
