@@ -603,7 +603,7 @@ Votre Commande a été envoyé, vous allez recevoir une réponse dans quelques i
 <div style="margin-top:23px;" onclick="$('.pano1').hide();$('.pano3').hide();" class="buttonx">Ok</div>
 </div>
 <div onclick="hideall()" class="backgrn"></div>
-<div id="pilo2" style="width:85%;" class="bghyn">
+<div id="pilo2" style="width:85%;height: 50% !important;" class="bghyn">
 <div class="ajouterpan2">Saisissez votre demande</div>
 <span style="padding: 0% 4%;
     display: block;
@@ -614,10 +614,13 @@ Votre Commande a été envoyé, vous allez recevoir une réponse dans quelques i
     margin-top: 10px;">Merci de précisez brièvement votre demande, un conseiller va vous rappeler dans le plus bref délai ! </span>
 <textarea type="text" style='    padding: 2%;
     outline: none;
-    border-radius: 4px;
+
     float: left;
-    width: 90%;
-    border: 1px solid #e0dfdf;
+    width: 90%; resize: none;
+    border-bottom: 2px solid silver;
+	 border-left: 1px solid white;
+	  border-right: 1px solid white;
+	   border-top: 1px solid white;
     margin: 3%;'></textarea>
 	
 		<div  onclick="ajouterpanier2()" style="margin-top:20px;margin-bottom:8px;float:left;" class="swiper-button-next activeo btsuivant33 tti2">
