@@ -942,16 +942,16 @@ margin:10% auto auto!important
 }
 
 .ajouterpan {
-font-size:1.2em;
-padding:4% 3%;
-float:left;
-text-align:center;
-width:94%;
-color:#fff;
-border-top-left-radius:6px;
-border-top-right-radius:7px;
-background:#9ad00a;
-border-bottom:2px solid #88be13!important
+    font-size: 1.2em;
+    padding: 4% 3%;
+    float: left;
+    text-align: center;
+    width: 94%;
+    color: #fff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 7px;
+    background: #4a4a4a;
+    border-bottom: 2px solid #3a3a3a!important;
 }
 
 .titrepanier {
@@ -1004,7 +1004,7 @@ float:left
 }
 
 .hjk {
-height:31px;
+height:30px;
 text-align:center;
 outline:none;
 color:grey;
