@@ -245,10 +245,11 @@ if (num1 > 1)
 function affichepanier()
 {
 
-
+var panier=localStorage.getItem('panier');
+var client=localStorage.getItem('email');
 $.ajax({
 
-         data: "lepanier=ok",
+         data: "lepanier=ok&panier="+panier+"&client="+client,
          type: "post",
          url:  "http://labseo.net/hamza/userinsert.php",
 		
@@ -338,6 +339,8 @@ $('.backgrn').hide();
  }
 function ajouterpanier()
 {
+var ab=localStorage.getItem('email');
+var codepanier=localStorage.getItem('panier');
 var a=$("#idproduct").val();
 var b=$("#valqt").val();
 var j=$('.countpanier').html();
@@ -352,8 +355,7 @@ $("#countpanier4").html(k);
 $("#countpanier5").html(k);
 
 $.ajax({
-
-         data: "ajouteraupanier=ok&idproduct="+a+"&valqt="+b+"&finalo="+res,
+         data: "ajouteraupanier=ok&idclientp="+ab+"&codepanier="+codepanier+"&idproduct="+a+"&valqt="+b+"&finalo="+res,
          type: "post",
          url:  "http://labseo.net/hamza/userinsert.php",
 		
@@ -382,8 +384,8 @@ $('.backgrn').hide();
 
 function loadpanier()
 {
-var panier="panier1";
-var client="174";
+var panier=localStorage.getItem('panier');
+var client=localStorage.getItem('email');
 $.ajax({
 
          data: "loadpanier=ok&panier="+panier+"&client="+client,
@@ -492,11 +494,28 @@ $('#getuserinfox').html(data);
 });
 }
 
+
+function ChaineAleatoire(nbcar)
+{
+	var ListeCar = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9");
+	var Chaine ='';
+	for(i = 0; i < nbcar; i++)
+	{
+		Chaine = Chaine + ListeCar[Math.floor(Math.random()*ListeCar.length)];
+	}
+	return Chaine;
+}
 function jecommande(a,b)
 {
+
+var panier=localStorage.getItem('panier');
+var client=localStorage.getItem('email');
+
+
 $.ajax({
 
-         data: "jecommande=ok&total="+a+"&livraison="+b+"&client=reda1&panier=panier1",
+
+         data: "jecommande=ok&total="+a+"&livraison="+b+"&client="+client+"&panier="+panier,
          type: "post",
          url:  "http://labseo.net/hamza/userinsert.php",
 		
@@ -513,7 +532,8 @@ $.ajax({
 	$('.pano3').show();
 	loadpanier();
 	affichepanier();
-	
+	var kiki = ChaineAleatoire(8);
+	localStorage.setItem('panier', kiki);
     },
     error: function()
     {
@@ -582,7 +602,7 @@ border:none !important;
 }
 </style>
 </head>
-<body onload="loadpanier();getuserinfo('profesionel.reda@gmail.com')">
+<body onload="loadpanier();getuserinfo(localStorage.getItem('email'))">
 <div onclick="$('.pano1').hide();$('.pano').hide();$('.pano2').hide();$('.pano3').hide();"  class="pano1">
 </div>
 <div class="pano">
@@ -653,7 +673,7 @@ Votre Commande a été envoyé, vous allez recevoir une réponse dans quelques i
 <ul data-role="listview" class="ui-listview">
 <li data-role="list-divider" role="heading" class="menuleft ui-li ui-li-divider ui-bar-d ui-first-child">Menu</li>
 					<a data-transition="slide" href="#profil"><li data-corners="false" data-shadow="false"  data-wrapperels="div" data-theme="d" class="bnx"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><img class="bora" src="user.png"> Mon Profil</div></div></li></a>
-					<a data-transition="slide" onclick="mescommandes('panier1')" href="#listedecommande"><li data-corners="false" data-shadow="false"  data-wrapperels="div" data-theme="d" class="bnx "><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><img class="bora" src="shopping.png"> Mes Commandes</div></div></li></a>
+					<a data-transition="slide" onclick="mescommandes(localStorage.getItem('email'))" href="#listedecommande"><li data-corners="false" data-shadow="false"  data-wrapperels="div" data-theme="d" class="bnx "><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><img class="bora" src="shopping.png"> Mes Commandes</div></div></li></a>
 					<a data-transition="slide" onclick="affiche11('35')" href="#nouveautes"><li data-corners="false" data-shadow="false"  data-wrapperels="div" data-theme="d" class="bnx"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><img class="bora" src="percentage.png">  Promotions</div></div></li></a>
 					<a data-transition="slide" onclick="affiche11('36')" href="#nouveautes"><li data-corners="false" data-shadow="false"  data-wrapperels="div" data-theme="d" class="bnx"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><img class="bora" src="badge.png"> Nouveautés </div></div></li></a>
 					<a data-transition="slide" href="#Contacteznous"><li data-corners="false" data-shadow="false"  data-wrapperels="div" data-theme="d" class="bnx"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><img class="bora" src="bubble.png"> Contact</div></div></li></a>

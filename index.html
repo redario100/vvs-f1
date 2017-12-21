@@ -184,6 +184,18 @@ if (!nomresidence)
 
 	else
 	{
+function ChaineAleatoire(nbcar)
+{
+	var ListeCar = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9");
+	var Chaine ='';
+	for(i = 0; i < nbcar; i++)
+	{
+		Chaine = Chaine + ListeCar[Math.floor(Math.random()*ListeCar.length)];
+	}
+	return Chaine;
+}
+
+
   $.ajax({
          data: "ajout_user=ok&nomw="+nom+"&emailw="+email+"&passwordw="+password+"&telw="+tel+"&nomresidencew="+nomresidence+"&choixbienw="+choixbien+"&numimmeublew="+numimmeuble+"&numvillaappartw="+numvillaappart,
          type: "post",
@@ -203,9 +215,11 @@ $( "#popo" ).val("");
 $( "#choixbien" ).val("");
 $( "#emailo" ).val("");
 $( "#nappart" ).val("");
- localStorage.setItem('validation', 'ok');
+localStorage.setItem('validation', 'ok');
+localStorage.setItem('email', email);
+var kiki = ChaineAleatoire(8);
+localStorage.setItem('panier', kiki);
 document.location.href='home.html';
-
 
 
 }, 1500);
@@ -218,8 +232,10 @@ document.location.href='home.html';
 
 function testo()
 {  
-//window.localStorage.removeItem("validation");  localStorage.clear();
+
+window.localStorage.removeItem("validation");  localStorage.clear();
 if (localStorage.getItem('validation') == null) {
+$('body').css("opacity", "1");
 return false;
 }
 else
@@ -235,7 +251,7 @@ document.location.href='home.html';
 	</body>
 	</head>
 	
-	<body  onload="testo()" id="content">
+	<body  onload="testo()" style="opacity:0" id="content">
 	<div id="bg1" style="display:none;position: fixed;width: 100%;height: 100%;z-index: 999;"></div>
 	<img class="loader" src="loader.gif">
 	<img id="loadert" class="loaderia" src="images/ring-alt.gif">
@@ -375,7 +391,7 @@ Aujourd'hui, profiter encore plus de votre ville verte et passez plus de temps a
 </div>
 <div class="jelly-form" style="width:100%">
 	<label>Mot de passe</label><br/>
-    <input onclick="biza('password')" type="text" id="password" style="border-radius:0px !important;" placeholder="">
+    <input onclick="biza('password')" type="password" id="password" style="border-radius:0px !important;" placeholder="">
 </div>
 
 
