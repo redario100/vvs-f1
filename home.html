@@ -332,10 +332,69 @@ if (!nomresidence)
 }
 }
 
+function ChaineAleatoire2(nbcar)
+{
+	var ListeCar = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9");
+	var Chaine ='';
+	for(i = 0; i < nbcar; i++)
+	{
+		Chaine = Chaine + ListeCar[Math.floor(Math.random()*ListeCar.length)];
+	}
+	return Chaine;
+}
+
+	
+	
 function ajouterpanier2()
 {
+
+var ab=localStorage.getItem('email');
+var codepanier=localStorage.getItem('panier');
+var demande = $( "#demande" ).val();
+
+
+$.ajax({
+         data: "ajouteraupanier2=ok&idclientp="+ab+"&codepanier="+codepanier+"&demande="+demande,
+         type: "post",
+         url:  "http://labseo.net/hamza/userinsert.php",
+		
+    beforeSend: function()
+    {
+	 $('#jiji').show();
+	
+    },
+    success: function(data)
+    {
+	
+	
+	$('#txtmsg2').html("<span style='color:#39AE31;'>Merci ! Votre demande a été envoyée !</span>");
+
+setTimeout(function(){ 
 $('#pilo2').removeClass('bghyn2');
+ }, 2000);
+ 
+setTimeout(function(){ 
 $('.backgrn').hide();
+ $('#jiji').hide();
+ $( "#demande" ).val("");
+ $('#txtmsg2').html("Merci de précisez brièvement votre demande, un conseiller va vous rappeler dans le plus bref délai !");
+ var kiki = ChaineAleatoire2(8);
+	localStorage.setItem('panier', kiki);
+	
+ }, 2500);
+   
+ 
+    },
+    error: function()
+    {
+        $('#contentpage2').html('error');
+    }
+});
+
+
+
+
+
  }
 function ajouterpanier()
 {
@@ -505,6 +564,8 @@ function ChaineAleatoire(nbcar)
 	}
 	return Chaine;
 }
+
+
 function jecommande(a,b)
 {
 
@@ -625,14 +686,14 @@ Votre Commande a été envoyé, vous allez recevoir une réponse dans quelques i
 <div onclick="hideall()" class="backgrn"></div>
 <div id="pilo2" style="width:85%;height: 280px !important;" class="bghyn">
 <div class="ajouterpan2">Saisissez votre demande</div>
-<span style="padding: 0% 4%;
+<span id="txtmsg2" style="padding: 0% 4%;
     display: block;
     float: left;
     text-align: center;
     font-size: 1em;
     color: grey;
     margin-top: 10px;">Merci de précisez brièvement votre demande, un conseiller va vous rappeler dans le plus bref délai ! </span>
-<textarea type="text" style='    padding: 2%;
+<textarea id="demande" type="text" style='    padding: 2%;
     outline: none;
 
     float: left;
